@@ -11,8 +11,8 @@ RSpec.feature 'User can authenticate' do
         expect(page).to have_content('Email')
         expect(page).to have_content('Password')
         expect(page).to have_content('Verify password')
-        expect(page).to have_link('Login')
-        expect(page).to have_link('Sign Up')
+        expect(page).to have_button('Login')
+        expect(page).to have_button('Sign Up')
       end
     end
   end
