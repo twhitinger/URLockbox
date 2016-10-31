@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def verify_password_mismatch
-    if !password_verified('user')
+    if params[:user][:password] != params[:user][:verify_password]
       flash[:warning] = 'Passwords must be the same'
       redirect_to new_user_path
     end
