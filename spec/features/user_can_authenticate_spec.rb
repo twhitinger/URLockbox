@@ -8,9 +8,9 @@ RSpec.feature 'User can authenticate' do
       expect(current_path).to eq('/login')
 
       within('#login-field') do
-        expect(page).to have_field('E-mail')
-        expect(page).to have_field('Password')
-        expect(page).to have_field('Verify Password')
+        expect(page).to have_content('Email')
+        expect(page).to have_content('Password')
+        expect(page).to have_content('Verify password')
         expect(page).to have_link('Login')
         expect(page).to have_link('Sign Up')
       end
