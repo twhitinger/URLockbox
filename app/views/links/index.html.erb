@@ -1,2 +1,26 @@
-<h1>Links</h1>
 <%= link_to "Sign Out", logout_path, method: :delete %>
+<h1>Add a New Link</h1>
+<%= render partial: 'shared/link_form', locals: { target: :link, path: links_path, button: "Submit"} %>
+<% if @links.count > 0 %>
+  <h1>Your Links</h1>
+  <div id="links">
+    <table class="table table-responsive table-bordered table-striped">
+      <thead>
+        <th>Title</th>
+        <th>URL</th>
+        <th>Status</th>
+        <th>Edit</th>
+      </thead>
+      <tbody>
+        <% @links.each do |link| %>
+          <tr id="<%= link.id %>">
+            <td class="read-<%= link.read %>"><%= link.title %></td>
+            <td class="read-<%= link.read %>"><%= link_to link.url, link.url %></td>
+            <td><%= link_to "Mark as #{update(link)}", link_path(link), method: :put %></td>
+            <td><%= link_to "Edit", edit_link_path(link), class: "btn btn-xs btn-default" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
