@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: 'connections#index'
+  root to: 'links#index'
   resources :users, only: [:new, :create]
-  resources :connections, only: [:index]
+  resources :links, only: [:index]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
