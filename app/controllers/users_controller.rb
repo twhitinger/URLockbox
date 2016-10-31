@@ -9,10 +9,11 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      flash[:success] = "Created Account, #{user.email}!"
       redirect_to links_path
     else
-      flash[:warning] = "Passwords don't match"
-      render :new
+      flash[:warning] = "oops"
+      redirect_to new_user_path
     end
   end
 
