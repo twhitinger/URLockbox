@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161031214505) do
 
   create_table "links", force: :cascade do |t|
     t.text    "url"
-    t.boolean "read",    default: true
+    t.boolean "read",    default: false
     t.integer "user_id"
     t.text    "title"
     t.index ["user_id"], name: "index_links_on_user_id", using: :btree
