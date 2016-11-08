@@ -1,0 +1,4 @@
+$(document).ready( () => {
+  updateReadState();
+  searchPage();
+});

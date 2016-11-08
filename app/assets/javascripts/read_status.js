@@ -1,7 +1,3 @@
-$(document).ready( () => {
-  updateReadState();
-});
-
 const updateReadState = () => {
   $('#links .update').on('click', (e) => {
     if(e.target.text != "Edit") {
