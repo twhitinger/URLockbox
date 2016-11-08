@@ -1,0 +1,6 @@
+<h1>Links Tagged with <%= @tag.name %></h1>
+<ul>
+  <% @tag.links.each do |link| %>
+    <li><%= link_to link.title, edit_link_path(link) %>----<%= link_to "Delete", link_path(link), method: :delete %></li>
+  <% end %>
+</ul>
