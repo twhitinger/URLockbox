@@ -31,7 +31,7 @@ class LinksController < ApplicationController
       flash[:warning] = @link.errors.full_messages.join(', ')
     else
       @link.update_attributes(read: !@link.read)
-        render json: @link
+        render json: [@link, @link.tags]
     end
   end
 
