@@ -19,7 +19,7 @@
             <td id="URL" style="background-<%=format(link)%>"><%= link_to link.url, link.url %></td>
             <td class='message'><%= link_to "Mark as #{update(link)}", '#', :id => link.id %></td>
             <td id="tags">Filler</td>
-            <td><%= link_to "Edit", edit_link_path(link), class: "btn btn-xs btn-default" %></td>
+            <td><%= link_to "Edit", edit_link_path(link), class: "btn btn-xs btn-success" %></td>
           </tr>
         <% end %>
       </tbody>
