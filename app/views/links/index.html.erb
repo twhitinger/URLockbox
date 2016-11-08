@@ -1,4 +1,5 @@
-<%= link_to "Sign Out", logout_path, method: :delete %>
+<%= link_to "Logout", logout_path, method: :delete %> 
+<input name="search_form" class="form-search search-box" type="text" id="search-bar" placeholder="Search Links">
 <h1>Add a New Link</h1>
 <%= render partial: 'shared/link_form', locals: { target: :link, path: links_path, button: "Submit"} %>
 <% if @links %>
