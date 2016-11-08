@@ -10,7 +10,6 @@ RSpec.feature 'User can authenticate' do
       within('#login-field') do
         expect(page).to have_content('Email')
         expect(page).to have_content('Password')
-        expect(page).to have_content('Verify password')
         expect(page).to have_button('Login')
       end
 
@@ -42,7 +41,6 @@ RSpec.feature 'User can authenticate' do
     within('#login-field') do
       fill_in 'Email', with: 'test@example.com'
       fill_in 'Password', with: 'muck'
-      fill_in 'Verify password', with: 'luck'
       click_on 'Sign Up'
     end
 
