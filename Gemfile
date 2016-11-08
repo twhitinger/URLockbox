@@ -28,6 +28,8 @@ gem 'figaro'
 gem 'bcrypt', '~> 3.1.7'
 gem 'validate_url'
 gem 'pry'
+gem 'sprockets', '>= 3.0.0'
+gem 'sprockets-es6'
 
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.3.6'
