@@ -2,7 +2,7 @@
   <%= f.label :url %>
   <%= f.text_field :url %>
   <%= f.label :title %>
-  <%= f.password_field :title %>
+  <%= f.text_field :title %>
    <%= f.hidden_field :user_id, { value: current_user.id }%>
   <%= f.submit button, class: "btn btn-primary" %>
 <% end %>
