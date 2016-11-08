@@ -2,30 +2,30 @@
 <h1>Add a New Link</h1>
 <%= render partial: 'shared/link_form', locals: { target: :link, path: links_path, button: "Submit"} %>
 <% if @links %>
-  <h1>Link Summary</h1>
-  <div class="form-group"><button id="sort-alphabetically" class="btn btn-xs btn-success" type="submit">Sort Titles</button></div>
-  <div id="links">
-    <table class="table table-responsive table-bordered table-striped">
-      <thead>
-        <th>Title</th>
-        <th>Url</th>
-        <th id="read-status"><%= link_to "Message Status", '#' %></th>
-        <th>Tags</th>
-        <th>Change</th>
-      </thead>
-      <tbody class="update">
-        <% @links.each do |link| %>
-          <tr class="link" id="<%= link.id %>">
-            <td id="title"><%= link.title %></td>
-            <td id="URL" style="background-<%=format(link)%>"><%= link_to link.url, link.url %></td>
-            <td class='message'><%= link_to "Mark as #{update(link)}", '#', :id => link.id %></td>
-            <td id="tags"> <% link.tags.each do |tag| %>
-              <%= link_to tag.name, tag_path(tag) %>
-              <% end %></td>
-            <td><%= link_to "Edit", edit_link_path(link), class: "btn btn-xs btn-success" %></td>
-          </tr>
+<h1>Link Summary</h1>
+<div class="form-group"><button id="sort-alphabetically" class="btn btn-xs btn-success" type="submit">Sort Titles</button></div>
+<div id="links">
+  <table class="table table-responsive table-bordered table-striped">
+    <thead>
+      <th>Title</th>
+      <th>Url</th>
+      <th id="read-status"><%= link_to "Message Status", '#' %></th>
+      <th>Tags</th>
+      <th>Change</th>
+    </thead>
+    <tbody class="update">
+      <% @links.each do |link| %>
+      <tr class="link" id="<%= link.id %>">
+        <td id="title"><%= link.title %></td>
+        <td id="URL" style="background-<%=format(link)%>"><%= link_to link.url, link.url %></td>
+        <td class='message'><%= link_to "Mark as #{update(link)}", '#', :id => link.id %></td>
+        <td id="tags"><% link.tags.each do |tag| %>
+          <%= link_to tag.name, tag_path(tag) %>
+          <% end %> </td>
+          <td><%= link_to "Edit", edit_link_path(link), class: "btn btn-xs btn-success" %></td>
+        </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-<% end %>
+  <% end %>

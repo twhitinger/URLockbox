@@ -1,6 +1,6 @@
 const updateReadState = () => {
   $('#links .update').on('click', (e) => {
-    if(e.target.text != "Edit") {
+    if(e.target.text != "Edit" && (e.target.getAttribute("href").indexOf("tag") <= -1))  {
       e.preventDefault();
       let id = e.target.id;
       query(id);

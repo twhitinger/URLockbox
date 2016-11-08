@@ -8,5 +8,4 @@ class TagsController < ApplicationController
     tag = Tag.where(user: current_user, id: params[:id])
     tag.destroy_all
   end
-  
 end
