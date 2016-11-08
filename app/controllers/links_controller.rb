@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+
   def index
     redirect_to login_path if !current_user
     @links = Link.where(user: current_user)
@@ -23,8 +24,10 @@ class LinksController < ApplicationController
   def update
     @link = Link.find(params[:id])
     if params[:link] && @link.update(link_params)
+      redirect_to links_path
       flash[:success] = "Updated your link"
     elsif params[:link]
+      redirect_to links_path
       flash[:warning] = @link.errors.full_messages.join(', ')
     else
       @link.update_attributes(read: !@link.read)

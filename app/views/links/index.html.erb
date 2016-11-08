@@ -9,6 +9,7 @@
         <th>Title</th>
         <th>Url</th>
         <th id="read-status"><%= link_to "Message Status", '#' %></th>
+        <th>Tags</th>
         <th>Change</th>
       </thead>
       <tbody class="update">
@@ -17,6 +18,7 @@
             <td id="title"><%= link.title %></td>
             <td id="URL" style="background-<%=format(link)%>"><%= link_to link.url, link.url %></td>
             <td class='message'><%= link_to "Mark as #{update(link)}", '#', :id => link.id %></td>
+            <td id="tags">Filler</td>
             <td><%= link_to "Edit", edit_link_path(link), class: "btn btn-xs btn-default" %></td>
           </tr>
         <% end %>
