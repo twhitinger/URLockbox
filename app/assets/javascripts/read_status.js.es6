@@ -18,13 +18,22 @@ const query = (id) => {
 };
 
 const createUpdateHTML = (link) => {
-  return(`<td ${link.id}>${link.title}</td><td style=background-${changeColor(link)}><a href=${link.url}>${link.url}</a></td><td class='message' ><a href='#' id=${link.id} >${replaceText(link)} </a></td><td></td><td><a class="btn btn-xs btn-success" href='/links/${link.id}/edit'>Edit</a></td></tr>`);
+  return(`<td ${link[0].id}>${link[0].title}</td><td style=background-${changeColor(link[0])}><a href=${link[0].url}>${link[0].url}</a></td><td class='message' ><a href='#' id=${link[0].id} >${replaceText(link[0])} </a></td><td>${loopsTags(link[1])}</td><td><a class="btn btn-xs btn-success" href='/links/${link[0].id}/edit'>Edit</a></td></tr>`);
 };
 
 const replaceText = (link) => {
   let val = "";
   link.read ? val = 'Mark as Unread' : val = 'Mark as Read';
   return val;
+};
+
+const loopsTags = (tags) => {
+
+  let html = '';
+   tags.map(function (tag) {
+    html += `<a href="/tags/${tag.id}">${tag.name}</a> `;
+  });
+  return html;
 };
 
 const changeColor = (link) => {
