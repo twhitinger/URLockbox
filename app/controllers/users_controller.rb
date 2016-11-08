@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       flash[:success] = "Created Account, #{user.email}!"
       redirect_to links_path
     else
-      flash[:warning] = "oops"
+      flash[:warning] = "Form must be filled in or username taken"
       redirect_to new_user_path
     end
   end
