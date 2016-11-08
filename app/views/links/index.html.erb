@@ -3,6 +3,7 @@
 <%= render partial: 'shared/link_form', locals: { target: :link, path: links_path, button: "Submit"} %>
 <% if @links %>
   <h1>Link Summary</h1>
+  <div class="form-group"><button id="sort-alphabetically" class="btn btn-xs btn-success" type="submit">Sort Titles</button></div>
   <div id="links">
     <table class="table table-responsive table-bordered table-striped">
       <thead>
